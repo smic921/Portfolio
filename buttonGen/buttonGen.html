@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Button Generator by me</title>
+        <style>
+            button
+            {
+                width: 50px; height: 50px;
+                background: white;
+                border: none;
+                margin: 1px;
+            }
+            
+            button:nth-child(2n)
+            {
+                background: pink;
+            }
+            button:hover
+            {
+                background: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Button Gen</h1>
+        <a href="../index.html">Back to main</a>
+        <p>Generates buttons using DOM API</p>
+        
+        <script>
+            let num = 1;
+        
+            let id = setInterval(() => {
+                let btn = document.createElement('button');
+                btn.innerText = num++;
+                document.body.appendChild(btn);
+            }, 1000/10);
+            
+            setTimeout(() => {
+                clearInterval(id);
+            }, 3000);
+        </script>
+    </body>
+</html>
